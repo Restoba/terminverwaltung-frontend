@@ -1,0 +1,15 @@
+<div class="container" style="margin-top: 70px;">
+  <h2>Login<span class="badge bg-secondary"></span></h2>
+  <div class="input-group mb-3">
+    <input #ref4 type="text" class="form-control" placeholder="Username" aria-label="username" [(ngModel)]="username"/>
+  </div>
+  <div class="input-group mb-3">
+    <input #ref5 type="text" class="form-control" placeholder="Passwort" aria-label="passwort" [(ngModel)]="passwort"/>
+  </div>
+  <div class="input-group mb-3">
+    <input #ref5 type="text" class="form-control" placeholder="Rolle" aria-label="rolle" [(ngModel)]="rolle"/>
+  </div>
+  <div>
+    <button class="btn btn-primary" style="margin:4px;" (click)="login(username, passwort, rolle)">Login</button>
+  </div>
+</div>

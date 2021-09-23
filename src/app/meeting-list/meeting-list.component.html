@@ -1,0 +1,44 @@
+<div class="container" style="margin-top: 70px;">
+  <h2>Neuer Termin<span class="badge bg-secondary"></span></h2>
+  <div class="input-group mb-3">
+    <input #ref1 type="text" class="form-control" placeholder="Nachname" aria-label="lastname" [(ngModel)]="lastname" />
+  </div>
+  <div class="input-group mb-3">
+    <input #ref2 type="text" class="form-control" placeholder="Vorname" aria-label="firstname" [(ngModel)]="firstname" />
+  </div>
+  <div class="input-group mb-3">
+    <input #ref3 type="text" class="form-control" placeholder="Datum und Zeit" aria-label="datetime" [(ngModel)]="datetime" />
+  </div>
+  <div>
+    <button class="btn btn-primary" style="margin:4px;" (click)="addMeeting(lastname, firstname, datetime)">Termin anlegen</button>
+  </div>
+</div>
+<div class="container" style="margin-top: 70px;">
+  <h2>Terminübersicht<span class="badge bg-secondary"></span></h2>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Vorname</th>
+      <th scope="col">Datum</th>
+      <th scope="col">Uhrzeit</th>
+      <th scope="col">Status</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let meeting of meeting$, index as i">
+      <td>{{ meeting.meetingId }}</td>
+      <td>{{ meeting.lastname }}</td>
+      <td>{{ meeting.firstname }}</td>
+      <td>{{ meeting.meetingDateTime | date: 'dd/MM/yyyy'}}</td>
+      <td>{{ meeting.meetingDateTime | date:'shortTime'}}</td>
+      <td>{{ meeting.status }}</td>
+      <td>
+        <button class="btn btn-primary" style="margin:4px;" (click)="deleteMeeting(meeting)">Löschen</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

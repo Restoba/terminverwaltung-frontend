@@ -1,0 +1,23 @@
+<div class="container" style="margin-top: 70px;">
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Anzahl</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let vaccinecapacity of vaccinecapacity$, index as i">
+      <td>{{ vaccinecapacity.vaccinecapacityId }}</td>
+      <td> {{ vaccinecapacity.name }}</td>
+      <td> {{ vaccinecapacity.capacity }}</td>
+      <td>
+        <button class="btn btn-primary" style="margin:4px;" (click)="addVaccinecapacity(vaccinecapacity)">+</button>
+        <button class="btn btn-primary" style="margin:4px;" (click)="subVaccinecapacity(vaccinecapacity)">-</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
